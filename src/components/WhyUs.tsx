@@ -67,7 +67,10 @@ export default function WhyUs() {
     <section id="why-us" style={{ background: "#ffffff", padding: "100px 24px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div className="grid md:grid-cols-2 gap-16 items-start">
-          <div style={{ position: "sticky", top: 120 }}>
+          {/* Sticky only from md up — on mobile the columns stack, so this
+              block should scroll away naturally along with the cards
+              instead of pinning in place. */}
+          <div className="md:sticky static md:top-[120px]">
             <SectionLabel>Why eNetwork ATM</SectionLabel>
             <GoldDivider />
             <SectionHeading>
